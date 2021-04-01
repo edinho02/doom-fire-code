@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Monoton';
+  src: url('../fonts/Monoton-Regular.ttf');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #a54a33;
+}
+
+.header {
+  font-family: 'Monoton', sans-serif;
+  margin-bottom: 35px;
+  font-weight: 600;
+  font-size: 2.5rem;
+  word-spacing: 1.5rem;
+  color: #2c001a;
+}
+
+.header > h1 {
+  margin: 0;
+}
+
+.doom-fire {
+  width: max-content;
+  height: max-content;
+  margin-top: 15px;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.doom-fire.debug-mode {
+  margin-top: 0px;
+}
+
+.doom-fire table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.doom-fire .fire-pixel {
+  height: 3px;
+  width: 2px;
+  /* border: solid 1px #353535; */
+}
+
+.doom-fire .fire-pixel.pixel-debug {
+  border: solid 2px #353535;
+  position: relative;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+}
+
+.doom-fire .fire-pixel.pixel-debug .fire-index {
+  color: #cacaca;
+  position: absolute;
+  font-size: 0.6rem;
+  top: 2px;
+  right: 3px;
+}
+
+.doom-fire .fire-pixel.pixel-debug .fire-content {
+  color: #fff;
+  font-weight: 600;
+}
+
+.controlers {
+  margin: 30px 10px;
+}
+
+.controlers #toggle-debug {
+  background-color: greenyellow;
+  border: solid 2px #222;
+  border-radius: 2px;
+  outline: 0;
+  color: #004600;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+}
+
+.controlers #toggle-debug:hover {
+  background-color: #c2ff66;
+  color: #008600;
+  border-color: #6e6e6e;
+}
