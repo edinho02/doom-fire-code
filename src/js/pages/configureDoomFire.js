@@ -4,7 +4,7 @@
   $('[doom-fire]').doomFireStart(60, 40, fireIntensity, 2);
 
   $('#intensity-lower').click(function () {
-    fireIntensity--;
+    fireIntensity = fireIntensity - 3;
 
     if (fireIntensity <= 0) {
       fireIntensity = 0;
@@ -14,7 +14,7 @@
   });
 
   $('#intensity-add').click(function () {
-    fireIntensity++;
+    fireIntensity = fireIntensity + 3;
 
     if (fireIntensity >= 37) {
       fireIntensity = 37;
