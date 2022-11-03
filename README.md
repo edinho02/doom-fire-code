@@ -1,5 +1,8 @@
 # Doom fire
+
+### Description
 My version of the fire algorithm present in the first DOOM games.
+Using JQuery, HTML, JS ans CSS
 
 ### Deployed on versel
 https://doom-fire-code.vercel.app/
