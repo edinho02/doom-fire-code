@@ -1,10 +1,11 @@
 (function () {
+  const fireIntensityStep = 5;
   let fireIntensity = 34;
 
   $('[doom-fire]').doomFireStart(60, 40, fireIntensity, 2);
 
   $('#intensity-lower').click(function () {
-    fireIntensity = fireIntensity - 3;
+    fireIntensity = fireIntensity - fireIntensityStep;
 
     if (fireIntensity <= 0) {
       fireIntensity = 0;
@@ -14,7 +15,7 @@
   });
 
   $('#intensity-add').click(function () {
-    fireIntensity = fireIntensity + 3;
+    fireIntensity = fireIntensity + fireIntensityStep;
 
     if (fireIntensity >= 37) {
       fireIntensity = 37;
