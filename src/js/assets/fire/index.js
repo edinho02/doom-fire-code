@@ -1,5 +1,6 @@
 (function () {
-  const fireColorPalette = [
+  const FireColorPalette = [
+    { r: 0, g: 0, b: 0 },
     { r: 7, g: 7, b: 7 },
     { r: 31, g: 7, b: 7 },
     { r: 47, g: 15, b: 7 },
@@ -75,10 +76,14 @@
     const fireRows = [];
 
     firePixels.forEach((value, index) => {
+      if (value <= 0) {
+        value = 0;
+      }
+
       const lineBreak = index % fireWidth;
       const fireRowIndex = Math.floor(index / fireWidth);
       const fireData = $('<td>').addClass('fire-pixel');
-      const colorObj = fireColorPalette[value];
+      const colorObj = FireColorPalette[value];
       const color = `rgb(${colorObj.r}, ${colorObj.g}, ${colorObj.b})`;
 
       if (!lineBreak) fireRows.push($('<tr>'));
@@ -107,14 +112,14 @@
   $.fn.doomFireStart = function (
     fireWidth,
     fireHeigth,
-    fireIntensity = 36,
+    fireIntensity = 37,
     wind = 0,
     debugging = false
   ) {
     const originalFireWidth = fireWidth;
     const originalFireHeight = fireHeigth;
 
-    $(this).attr({ 'doom-fire': fireIntensity, wind });
+    $(this).attr({ 'doom-fire': fireIntensity, wind: wind });
     if (debugging) $(this).attr({ debugging });
 
     let firePixels = [];
@@ -143,22 +148,10 @@
       attributes: true,
     });
 
-    setInterval(() => {
+    fireRunningInterval = setInterval(() => {
       generateFire(this, firePixels, fireWidth, fireHeigth);
     }, 70);
 
     return this;
   };
 })();
-
-$('[doom-fire]').doomFireStart(60, 40, 34, 2);
-$('#toggle-debug').click(function () {
-  const focusElement = $('[doom-fire]');
-  if (!focusElement.attr('debugging')) {
-    focusElement.attr('debugging', true).addClass('debug-mode');
-    $(this).html('Normal Mode');
-  } else {
-    focusElement.removeAttr('debugging').removeClass('debug-mode');
-    $(this).html('Debug Mode');
-  }
-});

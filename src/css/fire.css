@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-  background-color: #a54a33;
+  background-color: #222;
 }
 
 .header {
@@ -18,7 +18,7 @@ body {
   font-weight: 600;
   font-size: 2.5rem;
   word-spacing: 1.5rem;
-  color: #2c001a;
+  color: #b94a00;
 }
 
 .header > h1 {
@@ -73,21 +73,34 @@ body {
   margin: 30px 10px;
 }
 
-.controlers #toggle-debug {
-  background-color: greenyellow;
-  border: solid 2px #222;
-  border-radius: 2px;
+.controlers > button {
+  border-radius: 4px;
   outline: 0;
-  color: #004600;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   height: 40px;
+  width: 40px;
+  color: #1d1d1d;
+}
+
+.controlers > button:hover {
+  opacity: 0.85;
+}
+
+.controlers #toggle-debug {
+  background-color: #979797;
+  border: solid 2px #777777;
+  color: #222;
   width: 150px;
 }
 
-.controlers #toggle-debug:hover {
-  background-color: #c2ff66;
-  color: #008600;
-  border-color: #6e6e6e;
+.controlers #intensity-lower {
+  background-color: #db1010c9;
+  border: solid 2px #ce19198e;
+}
+
+.controlers #intensity-add {
+  background-color: #39d146d0;
+  border: solid 2px #35aa3f;
 }
